@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "cleverit-app"
+version = "0.1.0"
+description = ""
+authors = ["Pablo España <pablo.espanab@outlook.com>"]
+readme = "README.md"
+# packages = [{include = "cleverit_app"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dotenv = "^1.0.0"
+mypy = "^1.6.1"
+pylint = "^3.0.2"
+pre-commit = "^3.5.0"
+inject = "^5.1.0"
+SQLAlchemy = "^2.0.22"
+alembic = "^1.12.1"
+flask = "^3.0.0"
+black = "^23.10.1"
+psycopg2-binary = "^2.9.9"
+gunicorn = "^21.2.0"
+flask-httpauth = "^4.8.0"
+flask-marshmallow = "^0.15.0"
+flasgger = "^0.9.7.1"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.5.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

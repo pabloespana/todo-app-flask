@@ -1,0 +1,42 @@
+services:
+  db:
+    image: postgres:14.4-alpine
+    container_name: db-cleverit
+    hostname: db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    volumes:
+      - database-volume:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  app:
+    build: .
+    container_name: app-cleverit
+    volumes:
+      - .:/code
+    ports:
+      - '5000:5000'
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+
+  adminer:
+    image: adminer:4.8.1
+    container_name: adminer-cleverit
+    restart: always
+    ports:
+      - '8080:8080'
+    depends_on:
+      - db
+
+volumes:
+    database-volume:

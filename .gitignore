@@ -1,0 +1,15 @@
+venv/
+.vscode/
+.mypy_cache/
+env/
+__pycache__/
+*.env
+.mypy_cache/
+.pytest_cache/
+docker/db
+.vscode/launch.json
+poetry.lock
+db/
+*.egg-info
+.idea/
+.DS_Store

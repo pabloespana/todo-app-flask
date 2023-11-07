@@ -12,7 +12,8 @@ alembic upgrade head
 ```
 
 # Access to app:
-- Flask App Documentation at http://localhost:5000/apidocs/ 
+- Flask App Documentation at http://localhost:5000/apidocs/
+
     Test endpoints using token: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9"
 - Database viewer run at http://localhost:8080/ (user: postgres, password: postgres)
 
